@@ -9,6 +9,14 @@ public class Run {
     private int minutes;
     private int seconds;
     private int runID;
+    private double avgSpeed; //beräknas
+    private double avgTimePerKm; //besräknas
+    private double fitnessScore; //beräknas
+    private int totalDistance; //beräknas
+    private int avgDistance; //beräknas
+    private String comment; 
+
+    
 
     public Run(){
         this(0, 0, 0, LocalDate.now());
