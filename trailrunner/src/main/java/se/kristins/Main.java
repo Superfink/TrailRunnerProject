@@ -25,21 +25,6 @@ public class Main {
                 break;
         }
 
-
-    
-    
-    
-    
-
-        DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("HH:mm:ss");
-
-        Run newRun = new Run();
-        newRun.setTime(LocalTime.now());
-        System.out.println(newRun.getTime());
-        LocalTime tempTime = newRun.getTime();
-        System.out.println(tempTime.format(timeFormat));
-        System.out.println(newRun.getDate());
-
     }
 
     public static void setRunnerSettings(){

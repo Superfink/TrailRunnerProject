@@ -1,4 +1,5 @@
 package se.kristins;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Runner {
@@ -54,10 +55,19 @@ public void registerRound(){
                 System.out.println(newRun.getTimeString());
                 break;
             case 2:
-            //nytt datum
+                System.out.println("Enter new date.");
+                System.out.println("Year (YYYY):");
+                int year = GlobalTools.runScanner.nextInt();
+                System.out.println("Month (1-12):");
+                int month = GlobalTools.runScanner.nextInt();
+                System.out.println("Day:");
+                int day = GlobalTools.runScanner.nextInt();
+                newRun.setDate(LocalDate.of(year, month, day));
                 break;
             case 3: 
-            //ny kommentar
+                System.out.println("Enter comment: ");
+                GlobalTools.clearScanner();
+                newRun.setComment(GlobalTools.runScanner.nextLine());
                 break;
             default:
                 break;
@@ -71,7 +81,7 @@ private int registrationMenu(Run run){
     System.out.println("1. Time: " + run.getHours() + "h " + run.getMinutes() + "m " + run.getSeconds() + "s");
     System.out.println("2. Date: " + run.getDate());
     System.out.println("3. Comment: " + run.getComment());
-    System.out.println("4. Back to main menu");
+    System.out.println("4. Commit round and go back to main menu");
     return GlobalTools.runScanner.nextInt();
 }
 
@@ -80,7 +90,7 @@ private int registrationMenu(Run run){
         tempRun = this.runList.get(this.runList.size() -1);
         System.out.println("Round registered:");
         System.out.println("Round ID: " + tempRun.getRoundID());
-        System.out.println("Time:" + tempRun.getTime());
+        System.out.println("Time:" + tempRun.getTimeString());
         System.out.println("Date:" + tempRun.getDate());
         if(tempRun.getComment() != ""){
             System.out.println("Comment: " + tempRun.getComment());
