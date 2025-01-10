@@ -1,5 +1,9 @@
 package se.kristins;
+import java.sql.Time;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 
 public class Run {
     private int distance;
@@ -8,13 +12,19 @@ public class Run {
     private int hours;
     private int minutes;
     private int seconds;
-    private int runID;
+    private int roundID;
+    private String timeString;
+
+
     private double avgSpeed; //beräknas
     private double avgTimePerKm; //besräknas
     private double fitnessScore; //beräknas
     private int totalDistance; //beräknas
     private int avgDistance; //beräknas
-    private String comment; 
+    private String comment = ""; 
+
+    
+
 
     
 
@@ -32,8 +42,17 @@ public class Run {
         this.minutes = minutes;
         this.seconds = seconds;
         this.date = date;
+
     }
 
+// ---------- Methods -----------
+
+
+
+
+
+
+// --------  Getters and setters -------
 
     public int getHours() {
         return this.hours;
@@ -83,9 +102,30 @@ public class Run {
         this.date = date;
     }
 
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 
 
+    public int getRoundID() {
+        return roundID;
+    }
+    
+    public void setRoundID(int roundID) {
+        this.roundID = roundID;
+    }
 
+    public String getTimeString() {
+        return timeString;
+    }
+
+    public void setTimeString(String timeString) {
+        this.timeString = timeString;
+    }
 
 
 

@@ -5,20 +5,21 @@ import java.time.format.DateTimeFormatter;
 
 public class Main {
 
-    
+    public Runner runner = new Runner();;
     
     public static void main(String[] args) {
         System.out.println("Hello and welcome to mock-keeper, the fake news fitness app!");
         int runnersChoice = StartMenu.startMenu();
         switch (runnersChoice) {
             case 1: //OM 1: registrera runda
+                setNewRound();
                 break;
             case 2: //OM 2: Fitness score
                 break;
             case 3: //OM 3: View prev. rounds and stats
                 break;
             case 4: //OM 4: View/adjust personal settings
-                startUp();
+                setRunnerSettings();
                 break;
             default:
                 break;
@@ -41,10 +42,14 @@ public class Main {
 
     }
 
-    public static void startUp(){
+    public static void setRunnerSettings(){
         Runner runner = new Runner();
         runner.adjustPersonalSettings();
     }
     
+    public static void setNewRound(){
+        Runner runner = new Runner();
+        runner.registerRound();
+    }
 
 }
